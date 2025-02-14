@@ -16,28 +16,28 @@
     - [x] Cat food appear at different location once get destroyed 
   - [x] Add 1 point when cat collect cat food 
 - [x] Score board (done) (Qilin) 
-- [] Dog (2/23) (Qilin)
+- [ ] Dog (2/23) (Qilin)
   - [x] Dog move across the screen (y axis)
-  - [] Add 1 dog after 10s (max 10)
-    - [] Timer 
-  - [] Dog get destroyed when it touch the walls of the map and respond again 
-    - [] Each time it respond will be different y level 
+  - [ ] Add 1 dog after 10s (max 10)
+    - [ ] Timer 
+  - [ ] Dog get destroyed when it touch the walls of the map and respond again 
+    - [ ] Each time it respond will be different y level 
   - [x] Dog steal cat food 
     - [x] Dog destroy cat food but do not add points nor minus points 
-  - [] When cat touch dog, game end and jump back to home page  
-- [] Homepage (2/23)(Ellen) 
-  - [] A button to start the game 
-  - [] A button to jump to Part 2 of the Cat game 
-- [] Have all the sprites and background (3/2) (Ellen)
-  - [] Change all the sprites from placeholder image to cat image and the sprite names 
-- [] Data transfer from Part 1 to Part 2 (3/9)(All) 
-- [] Make game look good on all screen size (4/20) 
+  - [ ] When cat touch dog, game end and jump back to home page  
+- [ ] Homepage (2/23)(Ellen) 
+  - [ ] A button to start the game 
+  - [ ] A button to jump to Part 2 of the Cat game 
+- [ ] Have all the sprites and background (3/2) (Ellen)
+  - [ ] Change all the sprites from placeholder image to cat image and the sprite names 
+- [ ] Data transfer from Part 1 to Part 2 (3/9)(All) 
+- [ ] Make game look good on all screen size (4/20) 
 
 #### Beyond MVP
 
 - [ ] Catnip - Allow the cat to be immune to the dog for 5s
 - [ ] Allow user to change starter cat to the cats they got in Part 2 
-  - [] Add a button for change cat in home page 
+  - [ ] Add a button for change cat in home page 
  
 
 
