@@ -16,7 +16,7 @@
     - [x] Cat food appear at different location once get destroyed 
   - [x] Add 1 point when cat collect cat food 
 - [x] Score board (done) (Qilin) 
-- [x] Dog (2/23) (Qilin)
+- [] Dog (2/23) (Qilin)
   - [x] Dog move across the screen (y axis)
   - [] Add 1 dog after 10s (max 10)
     - [] Timer 
