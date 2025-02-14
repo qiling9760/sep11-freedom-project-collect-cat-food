@@ -25,12 +25,12 @@
   - [x] Dog steal cat food 
     - [x] Dog destroy cat food but do not add points nor minus points 
   - [ ] When cat touch dog, game end and jump back to home page  
-- [ ] Homepage (2/23)(Ellen) 
+- [ ] Homepage (3/2)(Ellen) 
   - [ ] A button to start the game 
   - [ ] A button to jump to Part 2 of the Cat game 
-- [ ] Have all the sprites and background (3/2) (Ellen)
+- [ ] Have all the sprites and background (3/9) (Ellen)
   - [ ] Change all the sprites from placeholder image to cat image and the sprite names 
-- [ ] Data transfer from Part 1 to Part 2 (3/9)(All) 
+- [ ] Data transfer from Part 1 to Part 2 (3/16)(All) 
 - [ ] Make game look good on all screen size (4/20) 
 
 #### Beyond MVP
