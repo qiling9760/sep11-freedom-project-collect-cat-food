@@ -1,9 +1,9 @@
 document.querySelector("#game").addEventListener("click",function(){
     // initialize kaboom context
-    kaboom();
+    kaboom(); // start kaboom when the button is clicked 
     //
 
-    scene("gameStart", () => {
+    scene("gameStart", () => { // game scene
     // load a sprite from an image
     loadSprite("dog", "sprites/dog.PNG");
     loadSprite("background", "sprites/background.jpg");
@@ -56,17 +56,17 @@ document.querySelector("#game").addEventListener("click",function(){
         z(2)
     ])
     function noLocalStorage(){
-        if (localStorage.getItem("catFood") == null){ // no local storagev
+        if (localStorage.getItem("catFood") == null){ // no local storage
             return true;
         } else { // yes local storage
             return false;
         }
     }
 
-    if (noLocalStorage()){
+    if (noLocalStorage()){ // no local storage then food value is 0
         catFood.value = 0;
     } else {
-        catFood.value= Number(localStorage.getItem("catFood"));
+        catFood.value= Number(localStorage.getItem("catFood")); // yes local storage then use the local storage value
     }
 
     // localStorage.removeItem("catFood");
@@ -75,6 +75,7 @@ document.querySelector("#game").addEventListener("click",function(){
         function game () {
             // variables
             var time = 30;
+            // randomize the position
             var x = rand(width());
             var y = rand(height());
             //
@@ -103,7 +104,7 @@ document.querySelector("#game").addEventListener("click",function(){
             //
 
             // dog
-            var y = rand(height());
+            var y = rand(height()); // respond dog any height of the screen
             const dog = add([
                 sprite("dog"),
                 pos(0, y),
@@ -173,10 +174,11 @@ document.querySelector("#game").addEventListener("click",function(){
 
             // collect cat food
             cat.onCollide("food",() => {
-                destroyAll("food");
-                catFood.value += 1;
-                localStorage.setItem("catFood", catFood.value);
-                catFood.text = "Cat food:" + localStorage.getItem("catFood");
+                destroyAll("food"); // destory the cat food
+                catFood.value += 1; // add cat food value
+                localStorage.setItem("catFood", catFood.value); // save the cat food value to local storage
+                catFood.text = "Cat food:" + localStorage.getItem("catFood"); // show the cat food value
+                // add a cat food anywhere else on the screen
                 var x = rand(width());
                 var y = rand(height());
                 add([
@@ -204,7 +206,7 @@ document.querySelector("#game").addEventListener("click",function(){
 
             // Add dog 2s
             var addDog = setInterval(function(){
-                var y = rand(height());
+                var y = rand(height()); // add dog every 2 seconds at any height of the screen
                 add([
                     sprite("dog"),
                     pos(0, y),
@@ -216,16 +218,18 @@ document.querySelector("#game").addEventListener("click",function(){
                     "dog"
                 ]);
             }, 2000);
+            //
 
 
             // dog die when touch wall and respond again
             rightWall.onCollide("dog",(dog) => {
                 destroy(dog);
             });
+            //
 
             // dog steal food (still have use)
             onCollide("dog","food",() => {
-                destroyAll("food");
+                destroyAll("food"); // destory cat food and add a new one
                 var x = rand(width());
                 var y = rand(height());
                 add([
@@ -241,14 +245,15 @@ document.querySelector("#game").addEventListener("click",function(){
             })
             //
 
-            // dog steal catnip
-            onCollide("dog","catnip",() => {
-                destroyAll("catnip");
-            })
-            //
+            // // dog steal catnip
+            // onCollide("dog","catnip",() => {
+            //     destroyAll("catnip");
+            // })
+            // //
 
             // reset game
             function resetGame () {
+                // destory every sprite on the screen
                 destroyAll("cat");
                 destroyAll("food");
                 destroyAll("dog");
@@ -260,7 +265,7 @@ document.querySelector("#game").addEventListener("click",function(){
                 //     area(),
                 //     "button"
                 // ])
-                window.location.href = "index.html";
+                window.location.href = "index.html"; // go back to home page
             }
 
             // restart game in 60s
@@ -270,31 +275,31 @@ document.querySelector("#game").addEventListener("click",function(){
                 z(2)
             ])
             var timeGo = setInterval(function(){
-                time = time-1;
+                time = time-1; // time count down by 1
                 timer.text = "Time: " + time;
             }, 1000);
 
             var endGame = setTimeout(function(){
-                clearInterval(timeGo);
-                clearInterval(addDog);
+                clearInterval(timeGo); // stop counting down time
+                clearInterval(addDog); // stop adding dog
                 destroy(timer);
                 resetGame ();
-            }, (time*1000));
+            }, (time*1000)); // game end after time seconds
 
 
             // rest game when cat touch dog
             cat.onCollide("dog",() => {
                 // clearTimeout(happy);
-                clearTimeout(endGame);
-                clearInterval(timeGo);
-                clearInterval(addDog);
+                clearTimeout(endGame); // stop the game from end after time seconds, so it ends immediately
+                clearInterval(timeGo); // stop time count down
+                clearInterval(addDog); // stop adding dog
                 destroy(timer);
                 resetGame ();
             })
             //
 
         }
-        game()
+        game() // start the game function
 
     // // restart button
     // onClick("button", () => [
@@ -305,5 +310,9 @@ document.querySelector("#game").addEventListener("click",function(){
     })
 
     // start game
-    go("gameStart");
+    go("gameStart"); // start the scene when the button is clicked
 });
+
+document.querySelector("#gamble").addEventListener("click",function(){
+    window.location.href = "https://kateek5417.github.io/sep11-cat-project", "_blank"; // go to part 2 of the game
+})
