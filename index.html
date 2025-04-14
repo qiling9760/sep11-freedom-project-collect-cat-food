@@ -9,12 +9,28 @@
         <link href="style.css" rel="stylesheet" type="text/css" />
         <style>
             /* CSS */
+            .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+              color: #fff;
+              background-color: #75e1fa;
+              border-color: #75e1fa; /*set the color you want here*/
+            }
+
+            body {
+              background-color: #;
+            }
+
             h1 {
                 margin: auto;
                 padding: 30px;
                 text-align: center;
                 font-size: 75px;
+                font-weight: bold;
                 font-family: "Times New Roman"
+            }
+
+            .Gato {
+              height: 200px;
+              width: 85%;
             }
 
         </style>
@@ -27,8 +43,9 @@
          <div class="container">
             <div class="row">
               <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-primary btn-lg" id = "game" >Game</button>
-                <button class="btn btn-primary btn-lg" id = "gamble" >Get Cat</button>
+                <button class="btn btn-primary btn-lg" id = "game">Game</button>
+                <button class="btn btn-primary btn-lg" id = "gamble">Get Cat</button>
+                <img src="sprites/cat1.png" class="Gato">
               </div>
             </div>
           </div>
