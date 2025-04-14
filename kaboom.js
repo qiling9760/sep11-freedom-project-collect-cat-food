@@ -1,6 +1,6 @@
 document.querySelector("#game").addEventListener("click",function(){
     // initialize kaboom context
-    kaboom(); // start kaboom when the button is clicked 
+    kaboom(); // start kaboom when the button is clicked
     //
 
     scene("gameStart", () => { // game scene
@@ -74,7 +74,7 @@ document.querySelector("#game").addEventListener("click",function(){
         // game
         function game () {
             // variables
-            var time = 30;
+            var time = 60;
             // randomize the position
             var x = rand(width());
             var y = rand(height());
