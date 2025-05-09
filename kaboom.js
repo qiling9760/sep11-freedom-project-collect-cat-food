@@ -4,74 +4,74 @@ document.querySelector("#game").addEventListener("click",function(){
     //
 
     scene("gameStart", () => { // game scene
-    // load a sprite from an image
-    loadSprite("dog", "sprites/dog.PNG");
-    loadSprite("background", "sprites/background.jpg");
-    loadSprite("catfood", "sprites/catFood.PNG");
-    loadSprite("starterCat", "sprites/roachCat.PNG");
-    //
+        // load a sprite from an image
+        loadSprite("dog", "sprites/dog.PNG");
+        loadSprite("background", "sprites/background.jpg");
+        loadSprite("catfood", "sprites/catFood.PNG");
+        loadSprite("starterCat", "sprites/roachCat.PNG");
+        //
 
-    // Walls to not let the sprite go out of the screen
-    add([
-        pos(0, 0),
-        rect(width(), 1),
-        outline(1),
-        area(),
-        body({ isStatic: true }),
-        "wall"
-    ])
+        // Walls to not let the sprite go out of the screen
+        add([
+            pos(0, 0),
+            rect(width(), 1),
+            outline(1),
+            area(),
+            body({ isStatic: true }),
+            "wall"
+        ])
 
-    add([
-        pos(0, height()),
-        rect(width(), 1),
-        outline(1),
-        area(),
-        body({ isStatic: true }),
-        "wall"
-    ])
+        add([
+            pos(0, height()),
+            rect(width(), 1),
+            outline(1),
+            area(),
+            body({ isStatic: true }),
+            "wall"
+        ])
 
-    add([
-        pos(0, 0),
-        rect(1, height()),
-        outline(1),
-        area(),
-        body({ isStatic: true }),
-        "wall"
-    ])
+        add([
+            pos(0, 0),
+            rect(1, height()),
+            outline(1),
+            area(),
+            body({ isStatic: true }),
+            "wall"
+        ])
 
-    const rightWall = add([
-        pos(width(), 0),
-        rect(1, height()),
-        outline(1),
-        area(),
-        body({ isStatic: true }),
-        "wall"
-    ])
-    //
+        const rightWall = add([
+            pos(width(), 0),
+            rect(1, height()),
+            outline(1),
+            area(),
+            body({ isStatic: true }),
+            "wall"
+        ])
+        //
 
-    // make a score
-    const catFood = add([
-        text("Cat food: " + localStorage.getItem("catFood")),
-        pos(25, 25),
-        z(2)
-    ])
-    function noLocalStorage(){
-        if (localStorage.getItem("catFood") == null){ // no local storage
-            return true;
-        } else { // yes local storage
-            return false;
+        // make a score
+        const catFood = add([
+            text("Cat food: " + localStorage.getItem("catFood")),
+            pos(25, 25),
+            z(2)
+        ])
+        function noLocalStorage(){
+            if (localStorage.getItem("catFood") == null){ // no local storage
+                return true;
+            } else { // yes local storage
+                return false;
+            }
         }
-    }
 
-    if (noLocalStorage()){ // no local storage then food value is 0
-        catFood.value = 0;
-    } else {
-        catFood.value= Number(localStorage.getItem("catFood")); // yes local storage then use the local storage value
-    }
+        if (noLocalStorage()){ // no local storage then food value is 0
+            catFood.value = 0;
+        } else {
+            catFood.value= Number(localStorage.getItem("catFood")); // yes local storage then use the local storage value
+        }
 
-    // localStorage.removeItem("catFood");
+        // localStorage.removeItem("catFood");
 
-        // game
+            // game
         function game () {
             // variables
             var time = 60;
@@ -85,9 +85,10 @@ document.querySelector("#game").addEventListener("click",function(){
                 sprite("background"),
                 anchor("center"),
                 pos(center()),
-                scale(1),
+                scale((width()/1603),(height()/1145)),
                 fixed()
             ]);
+
 
             // cat
             const cat = add([
@@ -297,16 +298,15 @@ document.querySelector("#game").addEventListener("click",function(){
                 resetGame ();
             })
             //
-
         }
         game() // start the game function
 
-    // // restart button
-    // onClick("button", () => [
-    //     destroyAll("button"),
-    //     game()
-    // ])
-    // //
+        // // restart button
+        // onClick("button", () => [
+        //     destroyAll("button"),
+        //     game()
+        // ])
+        // //
     })
 
     // start game
