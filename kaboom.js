@@ -150,7 +150,6 @@ document.querySelector("#game").addEventListener("click",function(){
             onKeyDown("left", () => {
                 cat.move(-500, 0)
             })
-
             onKeyDown("a", () => {
                 cat.move(-500, 0)
             })
@@ -269,6 +268,7 @@ document.querySelector("#game").addEventListener("click",function(){
                 // ])
                 window.location.href = "index.html"; // go back to home page
             }
+            //
 
             // restart game in 60s
             const timer = add([
@@ -287,7 +287,7 @@ document.querySelector("#game").addEventListener("click",function(){
                 destroy(timer);
                 resetGame ();
             }, (time*1000)); // game end after time seconds
-
+            //
 
             // rest game when cat touch dog
             cat.onCollide("dog",() => {
