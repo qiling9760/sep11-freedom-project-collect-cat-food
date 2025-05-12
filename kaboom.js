@@ -95,6 +95,7 @@ document.querySelector("#game").addEventListener("click",function(){
                 sprite("starterCat"),
                 pos(width()/2, height()/2),
                 area(),
+                // scale((width()/1603)*0.1,(height()/1145)*0.1),
                 scale(0.1),
                 rotate(270),
                 body(),
